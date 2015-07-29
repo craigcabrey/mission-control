@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en" ng-app="mission-control">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Mission Control</title>
+  <!-- STYLES -->
+  <!-- build:css lib/css/main.min.css -->
+  <link rel="stylesheet" type="text/css" href="components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="components/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="components/rdash-ui/dist/css/rdash.min.css">
+  <!-- endbuild -->
+  <!-- SCRIPTS -->
+  <!-- build:js lib/js/main.min.js -->
+  <script type="text/javascript" src="components/angular/angular.min.js"></script>
+  <script type="text/javascript" src="components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+  <script type="text/javascript" src="components/angular-cookies/angular-cookies.min.js"></script>
+  <script type="text/javascript" src="components/angular-ui-router/release/angular-ui-router.min.js"></script>
+  <!-- endbuild -->
+  <!-- Custom Scripts -->
+  <script type="text/javascript" src="js/dashboard.min.js"></script>
+</head>
+<body ng-controller="MasterCtrl">
+  <div id="page-wrapper" ng-class="{'open': toggle}" ng-cloak>
+
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+      <ul class="sidebar">
+        <li class="sidebar-main">
+          <a ng-click="toggleSidebar()">
+            <img src="img/logo.png" style="max-height: 60px;"/>
+            <span class="menu-icon glyphicon glyphicon-transfer"></span>
+          </a>
+        </li>
+        <li class="sidebar-title"><span>NAVIGATION</span></li>
+        <li class="sidebar-list">
+          <a href="#">Overview<span class="menu-icon fa fa-tachometer"></span></a>
+        </li>
+        <li class="sidebar-list">
+          <a href="#/agenda">Agenda<span class="menu-icon fa fa-check-circle"></span></a>
+        </li>
+        <li class="sidebar-list">
+          <a href="#/events">Events<span class="menu-icon fa fa-calendar"></span></a>
+        </li>
+        <li class="sidebar-list">
+          <a href="#/members">Members<span class="menu-icon fa fa-users"></span></a>
+        </li>
+        <li class="sidebar-list">
+          <a href="#/sponsors">Sponsors<span class="menu-icon fa fa-money"></span></a>
+        </li>
+        <li class="sidebar-list">
+          <a href="#/tasks">Tasks<span class="menu-icon fa fa-tasks"></span></a>
+        </li>
+      </ul>
+      <div class="sidebar-footer">
+        <div class="col-xs-4">
+          <a href="https://github.com/sse" target="_blank">
+            Github
+          </a>
+        </div>
+        <div class="col-xs-4">
+          <a href="https://sse.rit.edu/about" target="_blank">
+            About
+          </a>
+        </div>
+        <div class="col-xs-4">
+          <a href="https://github.com/sse/mission-control/issues">
+            Issues
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- End Sidebar -->
+
+    <div id="content-wrapper">
+      <div class="page-content">
+
+        <!-- Header Bar -->
+        <div class="row header">
+          <div class="col-xs-12">
+            <div class="user pull-right">
+              <div class="item dropdown">
+                <a href="#" class="dropdown-toggle">
+                  <i class="fa fa-user"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-right">
+                  <li class="dropdown-header">
+                    Joe Bloggs
+                  </li>
+                  <li class="divider"></li>
+                  <li class="link">
+                    <a href="#">
+                      Profile
+                    </a>
+                  </li>
+                  <li class="link">
+                    <a href="#">
+                      Menu Item
+                    </a>
+                  </li>
+                  <li class="link">
+                    <a href="#">
+                      Menu Item
+                    </a>
+                  </li>
+                  <li class="divider"></li>
+                  <li class="link">
+                    <a href="#">
+                      Logout
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="item dropdown">
+               <a href="#" class="dropdown-toggle">
+                  <i class="fa fa-envelope-o"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-right">
+                  <li class="dropdown-header">
+                    Notifications
+                  </li>
+                  <li class="divider"></li>
+                  <li>
+                    <a href="#">Server Down!</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="meta">
+              <div class="page">
+                Dashboard
+              </div>
+              <div class="breadcrumb-links">
+                Home / Dashboard
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End Header Bar -->
+
+        <!-- Main Content -->
+        <div ui-view></div>
+
+      </div><!-- End Page Content -->
+    </div><!-- End Content Wrapper -->
+  </div><!-- End Page Wrapper -->
+</body>
+</html>
