@@ -5,6 +5,7 @@ angular.module('mission-control').config(['$stateProvider', '$urlRouterProvider'
     // For unmatched routes
     $urlRouterProvider.otherwise('/');
 
+<<<<<<< HEAD
     // Application routes
     $stateProvider
       .state('index', {
