@@ -48,3 +48,6 @@ Icon
 /src/components
 
 *.swp
+
+# WebStorm (JetBrains)
+.idea/
