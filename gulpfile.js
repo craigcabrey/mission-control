@@ -10,13 +10,14 @@ var gulp = require('gulp'),
   rename = require('gulp-rename'),
   minifyHTML = require('gulp-minify-html');
 
+
 var paths = {
   scripts: 'src/js/**/*.*',
   styles: 'src/less/**/*.*',
   images: 'src/img/**/*.*',
-  templates: 'src/templates/**/*.html',
+  templates: 'src/views/**/*.html',
   index: 'src/index.html',
-  bower_fonts: 'src/components/**/*.{ttf,woff,eof,svg}',
+  bower_fonts: 'src/components/**/*.{ttf,woff,eof,svg}'
 };
 
 /**
@@ -26,7 +27,7 @@ gulp.task('usemin', function () {
   return gulp.src(paths.index)
     .pipe(usemin({
       js: [minifyJs(), 'concat'],
-      css: [minifyCss({keepSpecialComments: 0}), 'concat'],
+      css: [minifyCss({keepSpecialComments: 0}), 'concat']
     }))
     .pipe(gulp.dest('dist/'));
 });
@@ -47,7 +48,7 @@ gulp.task('copy-bower_fonts', function () {
 /**
  * Handle custom files
  */
-gulp.task('build-custom', ['custom-images', 'custom-js', 'custom-less', 'custom-templates']);
+gulp.task('build-custom', ['custom-images', 'custom-js', 'custom-less', 'custom-views']);
 
 gulp.task('custom-images', function () {
   return gulp.src(paths.images)
@@ -56,7 +57,7 @@ gulp.task('custom-images', function () {
 
 gulp.task('custom-js', function () {
   return gulp.src(paths.scripts)
-    .pipe(minifyJs())
+    //.pipe(minifyJs())
     .pipe(concat('dashboard.min.js'))
     .pipe(gulp.dest('dist/js'));
 });
@@ -67,10 +68,10 @@ gulp.task('custom-less', function () {
     .pipe(gulp.dest('dist/css'));
 });
 
-gulp.task('custom-templates', function () {
+gulp.task('custom-views', function () {
   return gulp.src(paths.templates)
-    .pipe(minifyHTML())
-    .pipe(gulp.dest('dist/templates'));
+    //.pipe(minifyHTML())
+    .pipe(gulp.dest('dist/views'));
 });
 
 /**
@@ -80,7 +81,7 @@ gulp.task('watch', function () {
   gulp.watch([paths.images], ['custom-images']);
   gulp.watch([paths.styles], ['custom-less']);
   gulp.watch([paths.scripts], ['custom-js']);
-  gulp.watch([paths.templates], ['custom-templates']);
+  gulp.watch([paths.templates], ['custom-views']);
   gulp.watch([paths.index], ['usemin']);
 });
 

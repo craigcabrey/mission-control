@@ -3,11 +3,11 @@
  */
 
 angular.module('mission-control')
-    .controller('MembersCtrl', ['$scope', '$http', MembersCtrl]);
+  .controller('MembersCtrl', ['$scope', 'Members', MembersCtrl]);
 
-function MembersCtrl($scope, $http) {
-    $http.get('http://vm01.craigcabrey.com:8000/api/v1/members')
-        .success(function(result, status, headers, config) {
-            $scope.members = result.data;
-        });
+function MembersCtrl($scope, Members) {
+  Members.get(function (data) {
+    $scope.members = data;
+    console.log(data);
+  });
 }

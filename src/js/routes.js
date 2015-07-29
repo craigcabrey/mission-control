@@ -9,32 +9,32 @@ angular.module('mission-control').config(['$stateProvider', '$urlRouterProvider'
     $stateProvider
       .state('index', {
         url: '/',
-        templateUrl: 'templates/overview.html',
+        templateUrl: 'views/overview.html',
         controller: 'OverviewCtrl'
       })
       .state('agenda', {
         url: '/agenda',
-        templateUrl: 'templates/agenda.html',
+        templateUrl: 'views/agenda.html',
         controller: 'AgendaCtrl'
       })
       .state('events', {
         url: '/events',
-        templateUrl: 'templates/events.html',
+        templateUrl: 'views/events.html',
         controller: 'EventsCtrl'
       })
       .state('members', {
         url: '/members',
-        templateUrl: 'templates/members.html',
+        templateUrl: 'views/members.html',
         controller: 'MembersCtrl'
       })
       .state('sponsors', {
         url: '/sponsors',
-        templateUrl: 'templates/sponsors.html',
+        templateUrl: 'views/sponsors.html',
         controller: 'SponsorsCtrl'
       })
       .state('tasks', {
         url: '/tasks',
-        templateUrl: 'templates/tasks.html',
+        templateUrl: 'views/tasks.html',
         controller: 'TasksCtrl'
       });
   }
