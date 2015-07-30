@@ -8,22 +8,23 @@ angular.module('mission-control')
 function MembersCtrl($scope, Members) {
   getMembers();
 
-  $scope.pagination = {
-    per_page: null,
-    current_page: null,
-    last_page: null,
-    next_page_url: null,
-    prev_page_url: null,
-    from: null,
-    to: null
-  };
+  $scope.members = {};
 
   function getMembers() {
     Members.get(function (responseData) {
-      $scope.members = responseData.data;
-      $scope.totalMembers = responseData.total;
+      $scope.membersList = responseData.data;
+      $scope.members = responseData;
     })
   }
+
+
+  $scope.getMembersPage = function (page) {
+    console.log('trying ot get page:', page);
+    Members.get({page: page}, function (responseData) {
+      $scope.members = responseData;
+      $scope.membersList = responseData.data;
+    })
+  };
 
 
 }
