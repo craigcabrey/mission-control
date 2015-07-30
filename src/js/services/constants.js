@@ -10,15 +10,16 @@
 angular.module('mission-control')
   .constant('SSE_API_URLS', {
     base: 'http://vm01.craigcabrey.com:8000/api/v1',
-    agenda: '/agenda',
-    events: '/events',
-    members: '/members',
-    memberships: '/memberships',
-    mentors: '/mentors',
-    officers: '/officers',
+    /* Each URL which has a service has '//' appended */
+    agenda: '/agenda', //
+    events: '/events', //
+    members: '/members', //
+    memberships: '/memberships', //
+    mentors: '/mentors', //
+    officers: '/officers', //
     quotes: '/quotes',
     terms: '/terms',
     tips: '/tips',
-    sponsors: '/sponsors',
+    sponsors: '/sponsors', //
     tasks: '/tasks'
   });

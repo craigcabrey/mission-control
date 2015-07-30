@@ -2,7 +2,7 @@
 
 /**
  * @ngdoc service
- * @name member-service.Members
+ * @name Members
  * @description
  * # Members
  * Factory in the mission-control app.
