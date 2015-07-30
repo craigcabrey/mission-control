@@ -19,7 +19,6 @@ function MembersCtrl($scope, Members) {
 
 
   $scope.getMembersPage = function (page) {
-    console.log('trying ot get page:', page);
     Members.get({page: page}, function (responseData) {
       $scope.members = responseData;
       $scope.membersList = responseData.data;
