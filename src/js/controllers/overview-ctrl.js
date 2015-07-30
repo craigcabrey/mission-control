@@ -20,9 +20,6 @@ function OverviewCtrl($scope, Members, Events, Sponsors) {
     total: 'API MISSING'
   };
 
-  $scope.tasks = {
-    total: 'API MISSING'
-  };
 
   /* Getting Member Data */
   Members.get(function (data) {
@@ -31,13 +28,13 @@ function OverviewCtrl($scope, Members, Events, Sponsors) {
   });
 
   /* Getting Event Data */
-  Events.get(function(data){
+  Events.get(function (data) {
     $scope.events.total = data.length;
-  })
+  });
 
   /* Getting Sponsor Data */
-  Sponsors.get(function(data){
+  Sponsors.get(function (data) {
     $scope.sponsors.total = data.length;
-  })
+  });
 
 }
