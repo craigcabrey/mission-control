@@ -9,5 +9,6 @@
  */
 angular.module('mission-control')
   .factory('Members', function ($resource, SSE_API_URL, MEMBERS_URL) {
-    return $resource(SSE_API_URL + MEMBERS_URL); // Note the full endpoint address
+    return $resource(SSE_API_URL + MEMBERS_URL);
   });
+

@@ -1,6 +1,7 @@
 angular.module('mission-control',
-    [
-        'ui.bootstrap',
-        'ui.router',
-        'ngCookies'
-    ]);
+  [
+    'ui.bootstrap',
+    'ui.router',
+    'ngCookies',
+    'ngResource'
+  ]);
