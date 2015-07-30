@@ -17,7 +17,7 @@ var paths = {
   images: 'src/img/**/*.*',
   templates: 'src/views/**/*.html',
   index: 'src/index.html',
-  bower_fonts: 'src/components/**/*.{ttf,woff,eof,svg}'
+  bower_fonts: 'src/components/**/*.{ttf,woff,eof,svg,woff2}'
 };
 
 /**
