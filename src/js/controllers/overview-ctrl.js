@@ -3,15 +3,17 @@
  */
 
 angular.module('mission-control')
-  .controller('OverviewCtrl', ['$scope', '$http', OverviewCtrl]);
+  .controller('OverviewCtrl', ['$scope', 'Members', OverviewCtrl]);
 
-function OverviewCtrl($scope, $http) {
+function OverviewCtrl($scope, Members) {
   $scope.events = {
     total: 10
   };
 
   $scope.members = {
-    total: 20
+    searchQuery: '',
+    total: 0,
+    data: []
   };
 
   $scope.sponsors = {
@@ -21,4 +23,10 @@ function OverviewCtrl($scope, $http) {
   $scope.tasks = {
     total: 50
   };
+
+  Members.get(function (data) {
+    $scope.members.total = data.total;
+    $scope.members.data = data.data;
+  });
+
 }
