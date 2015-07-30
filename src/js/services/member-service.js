@@ -8,7 +8,7 @@
  * Factory in the mission-control app.
  */
 angular.module('mission-control')
-  .factory('Members', function ($resource, SSE_API_URL, MEMBERS_URL) {
-    return $resource(SSE_API_URL + MEMBERS_URL);
+  .factory('Members', function ($resource, SSE_API_URLS) {
+    return $resource(SSE_API_URLS.base + SSE_API_URLS.members);
   });
 
