@@ -1,7 +1,7 @@
 # Mission Control
 
 ## Running
-`npm install && grunt install && gulp`
+`npm install && bower install && gulp`
 Notice gulp alone should do the trick
 
 If you are having issues, try installing gulp in global scope
