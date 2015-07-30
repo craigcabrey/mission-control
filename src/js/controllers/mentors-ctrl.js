@@ -3,7 +3,7 @@
  */
 
 angular.module('mission-control')
-    .controller('MentorsCtrl', ['$scope', '$http', MentorsCtrl]);
+  .controller('MentorsCtrl', ['$scope', '$http', MentorsCtrl]);
 
 function MentorsCtrl($scope, $http) {
 }

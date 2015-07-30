@@ -3,7 +3,7 @@
  */
 
 angular.module('mission-control')
-    .controller('EventsCtrl', ['$scope', '$http', EventsCtrl]);
+  .controller('EventsCtrl', ['$scope', '$http', EventsCtrl]);
 
 function EventsCtrl($scope, $http) {
 }

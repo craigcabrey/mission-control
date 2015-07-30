@@ -3,18 +3,18 @@
  */
 
 angular
-    .module('mission-control')
-    .directive('rdWidget', rdWidget);
+  .module('mission-control')
+  .directive('rdWidget', rdWidget);
 
 function rdWidget() {
-    var directive = {
-        transclude: true,
-        template: '<div class="widget" ng-transclude></div>',
-        restrict: 'EA'
-    };
-    return directive;
+  var directive = {
+    transclude: true,
+    template: '<div class="widget" ng-transclude></div>',
+    restrict: 'EA'
+  };
+  return directive;
 
-    function link(scope, element, attrs) {
-        /* */
-    }
+  function link(scope, element, attrs) {
+    /* */
+  }
 };
