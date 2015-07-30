@@ -23,19 +23,19 @@
           <!-- Go back 1 page -->
           <li ng-show="members.prev_page_url">
             <a ng-href="#/members"
-               ng-click="getMembersPage(members.current_page - 1)">&laquo;
+               ng-click="getMembers(members.current_page - 1)">&laquo;
             </a>
           </li>
           <!-- PAGE # -->
           <li ng-repeat="page in [] | range: members.last_page">
             <a ng-href="#/members"
-               ng-click="getMembersPage($index + 1)">{{$index + 1}}
+               ng-click="getMembers($index + 1)">{{$index + 1}}
             </a>
           </li>
           <!-- Go next 1 page -->
           <li ng-show="members.next_page_url">
             <a ng-href="#/members"
-               ng-click="getMembersPage(members.current_page + 1)">&raquo;
+               ng-click="getMembers(members.current_page + 1)">&raquo;
             </a></li>
         </ul>
         <div class="clearfix"></div>
