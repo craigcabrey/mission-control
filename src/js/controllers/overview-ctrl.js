@@ -24,6 +24,7 @@ function OverviewCtrl($scope, Members) {
     total: 50
   };
 
+  /* Getting Member Data */
   Members.get(function (data) {
     $scope.members.total = data.total;
     $scope.members.data = data.data;
