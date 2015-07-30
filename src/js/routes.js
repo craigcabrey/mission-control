@@ -27,6 +27,11 @@ angular.module('mission-control').config(['$stateProvider', '$urlRouterProvider'
         templateUrl: 'views/members.html',
         controller: 'MembersCtrl'
       })
+      .state('mentors', {
+        url: '/mentors',
+        templateUrl: 'views/mentors.html',
+        controller: 'MentorsCtrl'
+      })
       .state('sponsors', {
         url: '/sponsors',
         templateUrl: 'views/sponsors.html',
