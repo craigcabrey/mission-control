@@ -67,3 +67,31 @@
       <rd-widget>
   </div>
 </div>
+<div class="row">
+  <div class="col-lg-6">
+    <rd-widget>
+      <rd-widget-header icon="fa-tasks" title="Assigned Tasks">
+      </rd-widget-header>
+      <rd-widget-body classes="medium no-padding">
+        <div class="table-responsive">
+          <table class="table table-striped">
+            <thead>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Description</th>
+              <th>Actions</th>
+            </thead>
+            <tbody>
+              <tr ng-repeat="task in tasks">
+                <td>{{task.id}}</td>
+                <td>{{task.name}}</td>
+                <td>{{task.description}}</td>
+                <td>{{task.actions}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </rd-widget-body>
+    </rd-widget>
+  </div>
+</div>
