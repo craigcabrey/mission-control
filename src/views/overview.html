@@ -51,27 +51,10 @@
       <rd-widget-header icon="fa-users" title="Members">
         <input type="text" placeholder="Search Members" class="form-control input-sm" ng-model="members.searchQuery.$"/>
       </rd-widget-header>
-      <rd-widget-body classes="medium no-padding">
-        <div class="table-responsive">
-          <table class="table">
-            <thead>
-            <tr>
-              <th class="text-center">ID</th>
-              <th>First Name</th>
-              <th>Last Name</th>
-              <th>Email</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr ng-repeat="member in members.data | filter:members.searchQuery:strict">
-              <td>{{member.id}}</td>
-              <td>{{member.first_name}}</td>
-              <td>{{member.last_name}}</td>
-              <td>{{member.email}}</td>
-            </tr>
-            </tbody>
-          </table>
-        </div>
+      <rd-widget-body classes="large">
+        <canvas id="memberChart" width="800" height="300">
+
+        </canvas>
       </rd-widget-body>
       <rd-widget>
   </div>
