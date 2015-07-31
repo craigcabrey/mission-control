@@ -16,10 +16,13 @@ function OverviewCtrl($scope, Members, Events, Sponsors) {
     data: []
   };
 
-  $scope.sponsors = {
-    total: 'API MISSING'
+  $scope.mentors = {
+    onDuty: 'Matt Mokary'
   };
 
+  $scope.sponsors = {
+    total: 0
+  };
 
   /* Getting Member Data */
   Members.get(function (data) {
@@ -65,6 +68,7 @@ function OverviewCtrl($scope, Members, Events, Sponsors) {
     };
 
     var memberLineChartConfig = {
+      responsive: true,
       // Grid Lines
       scaleShowGridLines: false,
       scaleGridLineColor: "rgba(0,0,0,.05)",
@@ -87,8 +91,9 @@ function OverviewCtrl($scope, Members, Events, Sponsors) {
 
     };
 
-
-    var ctx = document.getElementById("memberChart").getContext("2d");
-    var memberLineChart = new Chart(ctx).Line(data, memberLineChartConfig);
+    var memberCanvasElement = document.getElementById("memberChart").getContext("2d");
+    var headcountCanvasElement= document.getElementById("headcountChart").getContext("2d");
+    var memberLineChart = new Chart(memberCanvasElement).Line(data, memberLineChartConfig);
+    var headcountChart = new Chart(headcountCanvasElement).Line(data, memberLineChartConfig);
   });
 }
