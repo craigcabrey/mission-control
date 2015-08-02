@@ -3,9 +3,9 @@
  */
 
 angular.module('mission-control')
-  .controller('OverviewCtrl', ['$scope', 'Members', 'Events', 'Sponsors', OverviewCtrl]);
+  .controller('OverviewCtrl', ['$scope', 'Members', 'Events', 'Sponsors', 'Tasks', OverviewCtrl]);
 
-function OverviewCtrl($scope, Members, Events, Sponsors) {
+function OverviewCtrl($scope, Members, Events, Sponsors, Tasks) {
   $scope.events = {
     total: 0
   };
@@ -25,14 +25,6 @@ function OverviewCtrl($scope, Members, Events, Sponsors) {
   };
 
   $scope.tasks = [
-    {id: 1, name: 'Task1', description: 'description', actions: 'View Close'},
-    {id: 2, name: 'Task2', description: 'description', actions: 'View Close'},
-    {id: 3, name: 'Task3', description: 'description', actions: 'View Close'},
-    {id: 4, name: 'Task4', description: 'description', actions: 'View Close'},
-    {id: 5, name: 'Task5', description: 'description', actions: 'View Close'},
-    {id: 6, name: 'Task6', description: 'description', actions: 'View Close'},
-    {id: 7, name: 'Task7', description: 'description', actions: 'View Close'},
-    {id: 8, name: 'Task8', description: 'description', actions: 'View Close'},
   ];
 
   /* Getting Member Data */
@@ -49,6 +41,10 @@ function OverviewCtrl($scope, Members, Events, Sponsors) {
   /* Getting Sponsor Data */
   Sponsors.get(function (data) {
     $scope.sponsors.total = data.length;
+  });
+
+  Tasks.get(function (data) {
+    $scope.tasks = data.data;
   });
 
   angular.element(document).ready(function () {
